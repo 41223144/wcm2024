@@ -143,6 +143,30 @@
 <p>git daemon --reuseaddr --base-path=. --export-all --verbose</p>
 <p>然後利用 C:\tmp\repository&gt;git clone git://localhost/repo1 repo002 取下倉儲內容, 其中的 localhost 可以使用外部 IP 或對應的網路符號名稱.</p>
 <p>若要在 Windows 環境打造一個類似 Github 的網際環境, 可以採用<span> </span><a href="https://github.com/gogs/gogs">https://github.com/gogs/gogs</a>, 其中包括網際資料庫<span> </span><a href="https://www.postgresql.org/">PostgreSQL</a><span> </span>伺服器或 SQLite 的應用.</p>
+<h1>bython 程式應用</h1>
+<h2>Bython 的優勢</h2>
+<ul>
+<li><strong>簡單易用</strong>：保持了 Python 語法的簡潔性。</li>
+<li><strong>高效能</strong>：利用 Cython 和 C 的性能優勢，加速數值計算和資料處理。</li>
+<li><strong>與現有生態系統的兼容性</strong>：可以輕鬆與 Python 和 Cython 生態系統中的庫和工具集成。</li>
+</ul>
+<h2>編譯和執行 Bython 程式</h2>
+<p>使用 Bython，您可以將 .by 檔案轉換為 .pyx 檔案，然後用 Cython 進行編譯：</p>
+<p>bython square.by<span> </span><span class="hljs-comment"># 生成 square.pyx</span></p>
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre hljs language-bash">cythonize -i square.pyx<span> </span><span class="hljs-comment"># 編譯生成可執行的 .so 文件</span></code></div>
+</div>
+<p>接下來，您可以在 Python 中使用這個編譯好的模組：</p>
+<p><span class="hljs-keyword">import</span><span> </span>square</p>
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre hljs language-python"><span class="hljs-built_in">print</span>(square.square(<span class="hljs-number">5</span>))<span> </span><span class="hljs-comment"># 輸出 25</span></code></div>
+<h2>Bython 程式範例，展示了如何定義函數和進行數值計算：</h2>
+<p><code class="!whitespace-pre hljs language-python"><span class="hljs-comment"># square.by</span></code></p>
+<p><code class="!whitespace-pre hljs language-python"><span class="hljs-comment"></span></code></p>
+<p><code class="!whitespace-pre hljs language-python"><span class="hljs-comment">def square(x: int) -&gt; int:</span></code></p>
+<p><code class="!whitespace-pre hljs language-python"><span class="hljs-comment">return x * x</span></code></p>
+<p><code class="!whitespace-pre hljs language-python"><span class="hljs-comment">print(square(5)) # 輸出 25</span></code></p>
+</div>
 <h1>我的課表</h1>
 <p><img alt="" height="200" src="/images/螢幕擷取畫面 2024-05-16 123353.png" width="303"/></p>
 <h1>about</h1>
